@@ -58,7 +58,3 @@ Set up the required variables in `backend/config.py` or your environment:
 
 - Docker is not currently configured in this repository.
 - This project is focused on a practical hybrid RAG workflow with persistent session history and a clean frontend experience.
-# Cortex
-# Cortex
-# Cortex
-# Cortex-RagBot
