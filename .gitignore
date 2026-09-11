@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+backend/.venv
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.*.local
+
+# Runtime indexes / uploads
+backend/data/raw/*
+backend/data/vector_store/*
+backend/data/bm25_index/*
+!backend/data/raw/.gitkeep
+!backend/data/vector_store/.gitkeep
+!backend/data/bm25_index/.gitkeep
+
+# Frontend
+frontend/node_modules
+frontend/dist
