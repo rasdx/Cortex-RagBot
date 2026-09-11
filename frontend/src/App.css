@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@source "./**/*.{js,jsx}";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: Inter, sans-serif;
+
+  --color-ink-950: #0a0b0f;
+  --color-ink-900: #111319;
+  --color-ink-800: #171a22;
+  --color-ink-700: #1f232e;
+  --color-ink-600: #2a2f3c;
+
+  --color-brass-300: #e9d49a;
+  --color-brass-400: #dcbd76;
+  --color-brass-500: #c9a961;
+  --color-brass-600: #ad8a45;
+
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-fade-up: fade-up 0.25s ease-out;
+  --animate-rippling: rippling var(--duration) ease-out;
+}
+
+@keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-line {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rippling {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white font-sans text-slate-800 antialiased;
+}
+
+.typing-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--color-brass-400);
+  animation: blink 1s step-end infinite;
+}
+
+.stage-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-slate-500) 0%,
+    var(--color-brass-300) 50%,
+    var(--color-slate-500) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: pulse-line 1.4s linear infinite;
+}
